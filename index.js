@@ -1,20 +1,26 @@
-function calculate(select) {
-    let n1=document.getElementById('f_number').value * 1;
-    let n2=document.getElementById('s_number').value * 1;
-    let fresult;
-    switch(select) {
-            case 1:
-            fresult = n1 + n2;
-            break;
-            case 2:
-            fresult = n1 - n2;
-            break;
-            case 3:
-            fresult = n1 / n2;
-            break;
-            case 4:
-            fresult = n1 * n2;
-            break;
+ //read operator
+const operator = prompt('Enter operator (+, -, * or /)');
+
+//read the numbers
+const num_1 = parseFloat(prompt('Enter your first number: '));
+const num_2 = parseFloat(prompt('Enter your second number: '));
+
+//when a null value is entered
+let result = 0;
+ if (isNaN(num_1) || isNaN(num_2)) {
+    alert('Input Error! Refresh page and enter a valid input');
+ }
+ else{
+
+    if (operator == '+'){
+        result = num_1 + num_2;
+    }else if (operator == '-'){
+        result = num_1 - num_2;
+    }else if (operator == '*'){
+        result = num_1 * num_2;
+    }else if (operator == '/'){
+        result = num_1 / num_2;
     }
-    document.getElementById("Result").value = fresult;
-}
+ }
+ document.write(num_1 + operator + num_2 + ' = ' + result);
+
